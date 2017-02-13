@@ -1,4 +1,4 @@
-package logDemo.logDemo;
+package logDemo;
 
 public class StringBuildTest {
 

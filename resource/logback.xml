@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="50 milliseconds" debug="false">
+	<!-- &amp;&amp;  代表  && 需要转义 -->
+
 	<property name="logdir" value="logs" />
-	
-	<appender name = "STDOUT" class = "ch.qos.logback.core.ConsoleAppender">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder charset="GBK">
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %F:%L - %msg%n</pattern>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %F:%L - %msg%n
+			</pattern>
 		</encoder>
+		<!-- <target>system.out</target> -->
+		<target>system.err</target>
 	</appender>
-	<appender name = "dailyLog" class = "ch.qos.logback.core.rolling.RollingFileAppender">
-		<rollingPolicy class = "ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>${logdir}/%d{yyyyMMdd}/dailylog</FileNamePattern>
-			<MaxHistory>8</MaxHistory>
+	<appender name="consoleLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logdir}/%d{yyyyMMdd}/consoleLog</FileNamePattern>
+			<MaxHistory>7</MaxHistory>
 			<cleanHistoryOnStart>true</cleanHistoryOnStart>
 		</rollingPolicy>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -20,12 +26,35 @@
 			<immediateFlush>true</immediateFlush>
 		</encoder>
 	</appender>
-	<logger name = "dailyLog" level = "debug">
-		<appender-ref ref = "dailyLog"/>
+	<logger name="consoleLog" level="debug">
+		<appender-ref ref="consoleLog" />
 	</logger>
+	
+	
+	<appender name="startStopLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logdir}/startStopLog/%d{yyyyMMdd}.log</FileNamePattern>
+			<MaxHistory>2</MaxHistory>
+			<cleanHistoryOnStart>true</cleanHistoryOnStart>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出,%d:日期;%thread:线程名;%-5level：级别,从左显示5个字符宽度;%msg:日志消息;%n:换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %F:%L - %msg%n
+			</pattern>
+			<immediateFlush>true</immediateFlush>
+		</encoder>
+	</appender>
+	<logger name="startStopLog" level="debug">
+		<appender-ref ref="startStopLog" />
+	</logger>
+
+
+	<!-- 发送错误邮件 -->
 
 	<!-- 日志输出级别 -->
 	<root level="DEBUG">
-		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="consoleLog" />
 	</root>
 </configuration>
