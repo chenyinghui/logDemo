@@ -23,4 +23,11 @@ public class LogTest {
 			logger.debug("daily logger test {}");
 		}
 	}
+	
+	@Test
+	public void mailTest() throws InterruptedException{
+		Logger logger = LoggerFactory.getLogger("email");
+		logger.debug("send email success");
+		Thread.sleep(10000L);
+	}
 }

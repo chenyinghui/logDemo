@@ -1,0 +1,12 @@
+2017-02-13 22:17:35.846 ERROR LogTest.java:30 - send email success
+2017-02-13 22:20:44.704 ERROR LogTest.java:30 - send email success
+2017-02-13 22:21:22.793 ERROR LogTest.java:30 - send email success
+2017-02-13 22:22:27.843 ERROR LogTest.java:30 - send email success
+2017-02-13 22:24:00.287 ERROR LogTest.java:30 - send email success
+2017-02-13 22:33:34.968 ERROR LogTest.java:30 - send email success
+2017-02-13 22:28:48.760 ERROR LogTest.java:30 - send email success
+2017-02-13 22:34:19.380 ERROR LogTest.java:30 - send email success
+2017-02-13 22:36:32.113 ERROR LogTest.java:30 - send email success
+2017-02-13 22:41:50.881 ERROR LogTest.java:30 - send email success
+2017-02-13 22:42:22.967 ERROR LogTest.java:30 - send email success
+2017-02-13 22:46:33.686 DEBUG LogTest.java:30 - send email success
