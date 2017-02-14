@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="50 milliseconds"
-	debug="false">
+	debug="true">
 	<!-- &amp;&amp; 代表 && 需要转义 -->
 
 	<property name="logdir" value="logs" />
@@ -58,14 +58,15 @@
     <to>ying_hui_chen@163.com</to>
     <from>chen_project_msg@163.com</from>
     <username>chen_project_msg@163.com</username>
-    <password>HUI03140323hui</password>
-    <subject>TESTING: %logger{20} - %m</subject>
+    <password>msgproject147</password>
+    <SSL>true</SSL>
+    <subject>系统错误信息</subject>
     <asynchronousSending>false</asynchronousSending>
     <layout class="ch.qos.logback.classic.PatternLayout">
       <pattern>%date %-5level %logger{35} - %message%n</pattern>
     </layout>       
   </appender>
-	<logger name = "email" level = "debug">
+	<logger name = "email" level = "error">
 		<appender-ref ref = "EMAIL"/>
 	</logger>
 	

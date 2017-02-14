@@ -27,7 +27,6 @@ public class LogTest {
 	@Test
 	public void mailTest() throws InterruptedException{
 		Logger logger = LoggerFactory.getLogger("email");
-		logger.debug("send email success");
-		Thread.sleep(10000L);
+		logger.error("send email success");
 	}
 }

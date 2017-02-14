@@ -14,19 +14,27 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<logback.version>1.1.6</logback.version>
 		<slf4j.version>1.7.21</slf4j.version>
+		<junit.version>4.12</junit.version>
+		<javax.mail.version>1.5.0-b01</javax.mail.version>
+		<commons.email.version>1.4</commons.email.version>
+		<commons.lang.version>2.6</commons.lang.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons.lang.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -41,7 +49,17 @@
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.4.5</version>
+			<version>${javax.mail.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>${commons.email.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.4</version>
 		</dependency>
 	</dependencies>
 </project>
