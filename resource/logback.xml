@@ -52,25 +52,6 @@
 	</logger>
 
 
-	<!-- 发送错误邮件 -->
-	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
-    <smtpHost>smtp.163.com</smtpHost>
-    <to>ying_hui_chen@163.com</to>
-    <from>chen_project_msg@163.com</from>
-    <username>chen_project_msg@163.com</username>
-    <password>msgproject147</password>
-    <SSL>true</SSL>
-    <subject>系统错误信息</subject>
-    <asynchronousSending>false</asynchronousSending>
-    <layout class="ch.qos.logback.classic.PatternLayout">
-      <pattern>%date %-5level %logger{35} - %message%n</pattern>
-    </layout>       
-  </appender>
-	<logger name = "email" level = "error">
-		<appender-ref ref = "EMAIL"/>
-	</logger>
-	
-
 	<!-- 日志输出级别 -->
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
